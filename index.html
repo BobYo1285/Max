@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max - Решение для iOS</title>
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .steps {
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .step-description {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .step-image {
+            margin-top: 10px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 250px;
+        }
+        
+        .step-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-white {
+            background: white;
+            color: #6e45e2;
+        }
+        
+        .btn-black {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .notes {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid #ff3366;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 30px;
+        }
+        
+        .notes h3 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .notes h3 i {
+            margin-right: 10px;
+            color: #ff3366;
+        }
+        
+        .notes ul {
+            padding-left: 20px;
+        }
+        
+        .notes li {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png" alt="Max Logo">
+            </div>
+            <h1>Max - Решение для iOS</h1>
+            <p class="subtitle">Создайте видимость установленного мессенджера за несколько простых шагов</p>
+        </header>
+        
+        <div class="card">
+            <h2><i class="fas fa-info-circle"></i> Что это такое</h2>
+            <p>Простой веб-сайт, который отображает белый или черный экран. При добавлении на главный экран iPhone создается иконка, идентичная мессенджеру Max, но при запуске отображается только пустой экран.</p>
+        </div>
+        
+        <div class="card">
+            <h2><i class="fas fa-mobile-alt"></i> Как установить на iPhone</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Откройте страницу в Safari</div>
+                        <div class="step-description">Выберите желаемый вариант экрана и откройте ссылку в браузере Safari</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Нажмите на иконку <i class="fas fa-share-square"></i></div>
+                        <div class="step-description">В нижней панели Safari нажмите на иконку "Поделиться"</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Выберите "На экран «Домой»"</div>
+                        <div class="step-description">Прокрутите меню вниз и выберите соответствующую опцию</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Добавьте на главный экран</div>
+                        <div class="step-description">Нажмите "Добавить" в правом верхнем углу</div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <div class="step-title">Готово!</div>
+                        <div class="step-description">На вашем домашнем экране появится иконка, идентичная мессенджеру Max</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <a href="https://bobyo1285.github.io/Max/white" class="btn btn-white">
+                <i class="fas fa-sun"></i> Белый экран
+            </a>
+            <a href="https://bobyo1285.github.io/Max/black" class="btn btn-black">
+                <i class="fas fa-moon"></i> Черный экран
+            </a>
+        </div>
+        
+        <div class="notes">
+            <h3><i class="fas fa-exclamation-triangle"></i> Важные примечания</h3>
+            <ul>
+                <li>Это решение только создает видимость установленного приложения</li>
+                <li>Приложение не осуществляет никакую реальную коммуникацию</li>
+                <li>Фактически это просто веб-страница, добавленная на главный экран</li>
+                <li>Не передает и не хранит пользовательские данные</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Данный проект не связан с официальным мессенджером Max и предназначен только для визуальной имитации.</p>
+    </footer>
+</body>
+</html>
