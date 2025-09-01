@@ -23,8 +23,8 @@
         body, html {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #ffffff;
+            background: #ffffff;
+            color: #333333;
             overflow: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -59,11 +59,10 @@
             padding: 30px;
             max-width: 600px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(12px);
+            background: #f8f9fa;
             border-radius: 24px;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
             margin: 20px 0;
         }
         
@@ -74,7 +73,8 @@
             border-radius: 22px;
             background: white;
             padding: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #dee2e6;
         }
         
         .logo img {
@@ -87,23 +87,23 @@
             font-size: 32px;
             margin-bottom: 20px;
             font-weight: 700;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            color: #212529;
         }
         
         p {
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 25px;
-            opacity: 0.95;
+            color: #495057;
         }
         
         .instructions {
-            background: rgba(255, 255, 255, 0.15);
+            background: #e9ecef;
             border-radius: 20px;
             padding: 30px;
             margin: 25px 0;
             text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid #dee2e6;
         }
         
         .instructions h2 {
@@ -111,6 +111,7 @@
             margin-bottom: 25px;
             text-align: center;
             font-weight: 600;
+            color: #212529;
         }
         
         .steps {
@@ -122,12 +123,13 @@
         .steps li {
             margin-bottom: 20px;
             padding: 18px 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #ffffff;
             border-radius: 16px;
             display: flex;
             align-items: center;
             font-size: 17px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid #dee2e6;
+            color: #495057;
         }
         
         .steps li i {
@@ -141,18 +143,21 @@
         .ios-button {
             display: inline-flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.2);
+            background: #ffffff;
             padding: 8px 16px;
             border-radius: 10px;
             font-weight: 500;
             margin: 0 6px;
             font-size: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid #ced4da;
+            color: #495057;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .ios-button i {
             margin-right: 8px;
             font-size: 18px;
+            color: #007AFF;
         }
         
         .buttons {
@@ -173,8 +178,9 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             min-width: 160px;
+            border: none;
         }
         
         .btn i {
@@ -185,7 +191,6 @@
         .btn-primary {
             background: linear-gradient(135deg, #007AFF 0%, #0051cc 100%);
             color: white;
-            border: none;
         }
         
         .btn-primary:hover, .btn-primary:active {
@@ -194,36 +199,32 @@
         }
         
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
+            background: #6c757d;
             color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover, .btn-secondary:active {
-            background: rgba(255, 255, 255, 0.3);
+            background: #5a6268;
             transform: translateY(-3px);
         }
         
         .btn-info {
-            background: rgba(255, 255, 255, 0.15);
+            background: #17a2b8;
             color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.25);
             margin-top: 20px;
             padding: 14px 28px;
             font-size: 17px;
-            backdrop-filter: blur(10px);
         }
         
         .btn-info:hover, .btn-info:active {
-            background: rgba(255, 255, 255, 0.25);
+            background: #138496;
             transform: translateY(-2px);
         }
         
         .footer {
             margin-top: 35px;
             font-size: 16px;
-            color: rgba(255, 255, 255, 0.85);
+            color: #6c757d;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -233,6 +234,7 @@
         .footer i {
             margin-right: 10px;
             font-size: 18px;
+            color: #007AFF;
         }
         
         /* Ориентация для мобильных устройств */
@@ -419,7 +421,7 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png" alt="Max Logo">
         </div>
         
-        <h1>Белый экран Max</h1>
+        <h1>Max</h1>
         
         <p>Эта страница предоставляет чистый белый экран. В режиме приложения (после добавления на главный экран) будет отображаться только белый фон.</p>
         
@@ -434,10 +436,6 @@
         </div>
         
         <a href="/Max/" class="btn btn-info"><i class="fas fa-info-circle"></i> Подробнее</a>
-        
-        <div class="footer">
-            <i class="fas fa-safari"></i> Откройте эту страницу в Safari для установки на главный экран
-        </div>
     </div>
 
     <script>
@@ -446,22 +444,6 @@
             if (window.navigator.standalone) {
                 document.body.classList.remove('normal-mode');
                 document.body.classList.add('pwa-mode');
-                document.body.style.background = '#ffffff';
-                
-                // Удаляем контейнер с инструкциями
-                const container = document.querySelector('.container');
-                if (container) {
-                    container.style.display = 'none';
-                }
-                
-                // Скрываем логотип для PWA режима
-                const logoPWA = document.querySelector('.logo-pwa');
-                if (logoPWA) {
-                    logoPWA.style.display = 'none';
-                }
-                
-                // Устанавливаем чистый белый фон
-                document.documentElement.style.background = '#ffffff';
                 document.body.style.background = '#ffffff';
                 document.body.innerHTML = ''; // Полностью очищаем содержимое
             }
