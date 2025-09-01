@@ -9,7 +9,7 @@
 ## Как установить на iPhone
 
 1. Откройте нужную страницу в браузере Safari:
-   - [Max](https://bobyo1285.github.io/Max/white)
+   - [Max](https://bobyo1285.github.io/Max/web)
 
 2. На странице представлена инструкция.
 
