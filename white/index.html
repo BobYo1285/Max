@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Max</title>
     <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/7/75/Max_logo_2025.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-title" content="Maх">
@@ -20,8 +21,8 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #ffffff;
-            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
         }
         
         body {
@@ -51,46 +52,88 @@
         
         .container {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             max-width: 90%;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
         
         .logo {
             width: 80%;
             max-width: 200px;
             opacity: 0.9;
-        }
-        
-        h1 {
-            font-size: 28px;
             margin-bottom: 20px;
         }
         
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
         p {
-            font-size: 16px;
+            font-size: 17px;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            opacity: 0.95;
         }
         
         .instructions {
-            background-color: rgba(245, 245, 245, 0.9);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: left;
         }
         
         .instructions h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
         }
         
         .steps {
-            text-align: left;
-            margin-left: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
         
         .steps li {
-            margin-bottom: 10px;
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        .steps li i {
+            margin-right: 12px;
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .ios-button {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            margin: 0 4px;
+            font-size: 15px;
+        }
+        
+        .ios-button i {
+            margin-right: 6px;
+            font-size: 16px;
         }
         
         .buttons {
@@ -102,12 +145,20 @@
         }
         
         .btn {
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 14px 24px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 16px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn i {
+            margin-right: 8px;
         }
         
         .btn-primary {
@@ -118,65 +169,103 @@
         
         .btn-primary:hover, .btn-primary:active {
             background-color: #0056CC;
+            transform: translateY(-2px);
         }
         
         .btn-secondary {
-            background-color: #f0f0f0;
-            color: #333;
-            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .btn-secondary:hover, .btn-secondary:active {
-            background-color: #e0e0e0;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .btn-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 15px;
+            padding: 12px 20px;
+            font-size: 15px;
+        }
+        
+        .btn-info:hover, .btn-info:active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
         
         .footer {
             margin-top: 30px;
             font-size: 14px;
-            color: #666;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer i {
+            margin-right: 8px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 90%;
+            width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .close-modal {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            margin-top: -10px;
+            margin-right: -10px;
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 24px;
+                font-size: 28px;
             }
             
             p {
-                font-size: 15px;
+                font-size: 16px;
             }
             
             .btn {
-                padding: 10px 16px;
+                padding: 12px 20px;
                 font-size: 15px;
             }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
         }
-
-    .ios-button {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 4px 8px;
-        border-radius: 6px;
-        font-weight: 500;
-        margin: 0 2px;
-    }
-
-    .ios-button i {
-        margin-right: 4px;
-        font-size: 0.9em;
-    }
-
-    .steps li {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 12px;
-    }
-
-    .steps li i:first-child {
-        margin-right: 8px;
-        margin-top: 2px;
-        min-width: 16px;
-    }
     </style>
 </head>
 <body class="normal-mode">
@@ -187,25 +276,27 @@
         
         <div class="instructions">
             <h2>Как установить на iPhone:</h2>
-            <ol class="steps">
-                <li>Нажмите кнопку "Поделиться" внизу браузера Safari</li>
-                <li>Прокрутите вниз и выберите "На экран «Домой»"</li>
-                <li>Нажмите "Добавить" в правом верхнем углу</li>
-                <li>Готово! Теперь приложение будет на вашем домашнем экране</li>
-            </ol>
+            <ul class="steps">
+                <li><i class="fas fa-share-square"></i> Нажмите кнопку <span class="ios-button"><i class="fas fa-share"></i> Поделиться</span> внизу браузера Safari</li>
+                <li><i class="fas fa-chevron-down"></i> Прокрутите вниз и выберите <span class="ios-button"><i class="fas fa-plus-circle"></i> На экран «Домой»</span></li>
+                <li><i class="fas fa-check"></i> Нажмите <span class="ios-button"><i class="fas fa-plus"></i> Добавить</span> в правом верхнем углу</li>
+                <li><i class="fas fa-check-circle"></i> Готово! Теперь приложение будет на вашем домашнем экране</li>
+            </ul>
         </div>
         
         <div class="buttons">
-            <a href="https://bobyo1285.github.io/Max/white" class="btn btn-primary">Белый экран</a>
-            <a href="https://bobyo1285.github.io/Max/black" class="btn btn-secondary">Черный экран</a>
+            <a href="https://bobyo1285.github.io/Max/white" class="btn btn-primary"><i class="fas fa-sun"></i> Белый экран</a>
+            <a href="https://bobyo1285.github.io/Max/black" class="btn btn-secondary"><i class="fas fa-moon"></i> Черный экран</a>
         </div>
         
+
+            <a href="/Max/index.html" class="btn btn-info"><i class="fas fa-info-circle"></i> Подробнее</a>
+        
         <div class="footer">
-            Откройте эту страницу в Safari для установки на главный экран
+            <i class="fas fa-safari"></i> Откройте эту страницу в Safari для установки на главный экран
         </div>
     </div>
-
-
+    
     <script>
         // Проверяем, открыто ли как PWA
         if (window.navigator.standalone) {
@@ -219,6 +310,7 @@
                 document.body.classList.remove('normal-mode');
                 document.body.classList.add('pwa-mode');
             }
+            
         });
     </script>
 </body>
