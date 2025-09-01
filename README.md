@@ -31,7 +31,7 @@
 
 ## Ссылки для установки
 
-- [Max](https://bobyo1285.github.io/Max/white)
+- [Max](https://bobyo1285.github.io/Max/web)
 
 ---
 
